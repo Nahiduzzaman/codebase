@@ -38,21 +38,96 @@
     <script src="app.module.js"></script>
     <script src="controllers/home.controller.js"></script>
     <script src="controllers/about.controller.js"></script>
+    <script src="controllers/main.controller.js"></script>
     <script src="factories/sample.factory.js"></script>
     <script src="services/sample.service.js"></script>
     <script src="directives/sample.directive.js"></script>
     <script src="app.router.js"></script>
     <script src="app.js"></script>
 </head>
-<body>
-    <md-toolbar style="padding-left: 20px;" layout="row" >
-      <h1>Angular App Starter</h1>
-    </md-toolbar>
+<body layout="column" ng-controller="mainController as vm">
+   <!--  <md-toolbar style="padding-left: 20px;" layout="row" >
+     <h1>Angular App Starter</h1>
+   </md-toolbar> -->
 
-    <div flex layout="row">
+    <!-- <div flex layout="row">
         <md-content flex id="content">
            <div ui-view=""></div>
         </md-content>
+    </div> -->
+    <div class="container" layout="row" flex>
+       <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-7dp" md-component-id="left">
+            <div class="logo">
+                Learning
+            </div>
+            <div class="instructor">
+                <div class="instructor-image">
+                    <img src="styles/images/profile.jpg" class="profile">
+                </div>
+
+                <div class="name">
+                    {{vm.name}}
+                </div>
+            </div>
+
+            <div class="side-menu">
+                
+
+                <md-list flex>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        Dashboard
+                    </md-list-item>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        Messages
+                    </md-list-item>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        My Courses
+                    </md-list-item>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        Earning
+                    </md-list-item>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        Statement
+                    </md-list-item>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        Log out
+                    </md-list-item>    
+                </md-list>
+
+            </div>
+       </md-sidenav>
+       <md-content id="content" flex>
+
+            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+              <md-button class="menu" ng-click="vm.toggleList();" aria-label="navigation links">
+                  <md-icon md-svg-src="styles/images/svg/menu.svg"></md-icon>
+              </md-button>
+              <md-nav-item md-nav-click="goto('page1')" name="page1">
+                Page One
+              </md-nav-item>
+              <md-nav-item md-nav-click="goto('page2')" name="page2">
+                Page Two
+              </md-nav-item>
+              <md-nav-item md-nav-click="goto('page3')" name="page3">
+                Page Three
+              </md-nav-item>
+
+              <!--   <md-menu>
+                  <md-button aria-label="Open menu with custom trigger" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+                      File
+                  </md-button>
+                  <md-menu-content width="3" ng-mouseleave="$mdMenu.close()">
+                  <md-menu-item ng-repeat="item in [1, 2, 3]">
+                    <md-button>
+                      Option {{item}}
+                    </md-button>
+                  </md-menu-item>
+              </md-menu> -->
+                  
+
+            </md-nav-bar>
+            <div ui-view=""></div>
+       </md-content>
     </div>
 
 </body>
