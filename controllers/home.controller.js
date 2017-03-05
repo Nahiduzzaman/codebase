@@ -30,10 +30,10 @@
 				    	yAxisID: 'y-axis-2',
 				    	fill: false,
 					    lineTension: 0.0,
-					    borderColor: "rgba(255,105,180,0.4)",
+					    borderColor: "rgba(0,255,0,1.0)",
 					    backgroundColor: "rgba(255,105,180,0.3)",
 					    pointBorderColor: "rgba(255,228,225,1)",
-					    pointBackgroundColor: "rgba(255,105,180,1)",
+					    pointBackgroundColor: "rgba(0,255,0,1.0)",
 					}
 				];
 
